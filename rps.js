@@ -15,8 +15,7 @@ function caseInsensitive(string) {
 
 computerChoice = getComputerChoice()
 
-// playerChoice = input("Rock, Paper, or Scissor?")
-playerChoice = caseInsensitive("Rock")
+playerChoice = caseInsensitive(input("Rock, Paper, or Scissors? "))
 
 console.log(playerChoice)
 
