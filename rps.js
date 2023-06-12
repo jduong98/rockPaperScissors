@@ -15,7 +15,7 @@ function caseInsensitive(string) {
 
 computerChoice = getComputerChoice()
 
-playerChoice = caseInsensitive(input("Rock, Paper, or Scissors? "))
+playerChoice = caseInsensitive(prompt("Rock, Paper, or Scissors? "))
 
 console.log(playerChoice)
 
@@ -49,4 +49,4 @@ function playRound(playerChoice, computerChoice) {
 
 result = playRound(playerChoice, computerChoice)
 
-console.log(result)
+alert(result)
