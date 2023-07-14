@@ -1,5 +1,5 @@
 function getComputerChoice() {
-    array = ["Rock", "Paper", "Scissor"]
+    array = ["Rock", "Paper", "Scissors"]
     return comChoice = array[Math.floor(Math.random() * array.length)]
 }
 
@@ -76,9 +76,9 @@ function announceWinner(player, computer){
     let text = "Final Winner: "
     if(player == 5){
       res.textContent = text + "Player";
-    const rock = document.querySelector('#rock').disabled =  true;
-    const paper = document.querySelector('#paper').disabled =  true;
-    const scissor = document.querySelector('#scissor').disabled =  true;
+      const rock = document.querySelector('#rock').disabled =  true;
+      const paper = document.querySelector('#paper').disabled =  true;
+      const scissor = document.querySelector('#scissor').disabled =  true;
     } else if (computer == 5){
       res.textContent = text + "Computer";
       const rock = document.querySelector('#rock').disabled =  true;
@@ -138,6 +138,7 @@ buttons.forEach((button) => {
     check(result)
     announceWinner(playerScore, computerScore)
     ++counter;
+    console.log(computerChoice)
     count.textContent = counter;
   });
 });
