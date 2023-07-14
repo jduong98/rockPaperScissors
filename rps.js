@@ -62,7 +62,7 @@ let count = document.getElementById('counter')
 pScore.textContent = "Player Score is: " + playerScore;
 cScore.textContent = "Computer Score is: " + computerScore;
 let counter = 0;
-
+count.textContent = counter;
 
 // let computerChoice = "Paper";
 const buttons = document.querySelectorAll('button');
@@ -104,7 +104,7 @@ buttons.forEach((button) => {
     result = playRound(playerChoice, computerChoice)
     check(result)
     ++counter;
-    
+    count.textContent = counter;
   });
 });
 
@@ -115,7 +115,7 @@ buttons.forEach((button) => {
 // console.log(playerChoice)
 
 
-// count.textContent = counter;
+
 
 
 // cScore.textContent = "Computer Score is: " + computerScore;
