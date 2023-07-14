@@ -1,9 +1,9 @@
 function getComputerChoice() {
     array = ["Rock", "Paper", "Scissor"]
     return comChoice = array[Math.floor(Math.random() * array.length)]
-
 }
 
+//function takes in choices and returns a value based on who won
 function playRound(playerChoice, computerChoice) {
   // 0 means draw
   // 1 means player wins
@@ -47,26 +47,31 @@ function playRound(playerChoice, computerChoice) {
     }
   }
 
-  function check(result){
-    if (result == 1){
-      result = "Player Won!";
-      res.textContent = result;
-      playerScore++;
-      pScore.textContent = "Player Score is: " + playerScore;
-      cScore.textContent = "Computer Score is: " + computerScore;
-    } 
-    else if(result == 2){
-      result = "Computer Won!";
-      res.textContent = result;
-      computerScore++;
-      pScore.textContent = "Player Score is: " + playerScore;
-      cScore.textContent = "Computer Score is: " + computerScore;
-    }else{
-      result = "Draw!";
-      res.textContent = result;
-    }
+// function checks the result and changes the result text
+// incremements a score depending on who won
+// updates the score
+function check(result){
+  if (result == 1){
+    result = "Player Won!";
+    res.textContent = result;
+    playerScore++;
+    pScore.textContent = "Player Score is: " + playerScore;
+    cScore.textContent = "Computer Score is: " + computerScore;
+  } 
+  else if(result == 2){
+    result = "Computer Won!";
+    res.textContent = result;
+    computerScore++;
+    pScore.textContent = "Player Score is: " + playerScore;
+    cScore.textContent = "Computer Score is: " + computerScore;
+  }else{
+    result = "Draw!";
+    res.textContent = result;
   }
+}
 
+
+// function announces the winner based on the score and disables buttons to avoid further playing
 function announceWinner(player, computer){
     let text = "Final Winner: "
     if(player == 5){
@@ -82,8 +87,7 @@ function announceWinner(player, computer){
         }
 }
 
-
-
+// function resets the score and enables the buttons
 function reset(){
     playerScore = 0;
     computerScore = 0;
@@ -116,9 +120,7 @@ cScore.textContent = "Computer Score is: " + computerScore;
 let counter = 0;
 count.textContent = "Round: "+ counter;
 
-// let computerChoice = "Paper";
 const buttons = document.querySelectorAll('.choice');
-// make function to check the result and put a choice 
 
 const resetBtn = document.querySelector(".reset")
 
@@ -126,12 +128,11 @@ resetBtn.addEventListener("click", () => {
   reset();
 })
 
-
 buttons.forEach((button) => {
   // and for each one we add a 'click' listener
   button.addEventListener('click', () => {
     let computerChoice = getComputerChoice()
-    console.log(computerChoice)
+    // console.log(computerChoice)
     playerChoice = button.value;
     result = playRound(playerChoice, computerChoice)
     check(result)
@@ -140,21 +141,3 @@ buttons.forEach((button) => {
     count.textContent = counter;
   });
 });
-
-
-
-
-// TODO: 
-
-// playerChoice = caseInsensitive(prompt("Rock, Paper, or Scissors? "))
-
-// console.log(playerChoice)
-
-
-
-
-
-// cScore.textContent = "Computer Score is: " + computerScore;
-// result = playRound(playerChoice, computerChoice)
-
-// console.log(result)
